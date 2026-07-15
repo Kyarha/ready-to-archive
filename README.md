@@ -4,12 +4,11 @@
 
 ### The last gate before you archive a session — so nothing of consequence gets lost.
 
-*One clear GO / NO-GO, backed by evidence, not optimism.*
+*A Claude skill. One clear GO / NO-GO, backed by evidence, not optimism.*
 
 [![version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/Kyarha/ready-to-archive/releases)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-8A63D2)](https://docs.claude.com/en/docs/claude-code)
-[![skills](https://img.shields.io/badge/skills-1-orange)](#whats-inside)
+[![Claude skill](https://img.shields.io/badge/Claude-skill-8A63D2)](https://support.anthropic.com/en/articles/12512140-get-started-with-skills-on-claude-ai)
 
 </div>
 
@@ -27,15 +26,17 @@ saved" points at a file it actually read or a `git` command it actually ran — 
 
 ## 🚀 Quick start
 
-1. **Install** — download the latest release zip and add it as a plugin in Claude Code.
+1. **Install** — download the latest release zip and add it through Claude's **Upload skill**
+   dialog (in Claude's settings, under **Capabilities → Skills**).
 2. **Ask, before you archive:**
-   > *"Ready to archive?"*  ·  *"Can I safely archive this?"*  ·  or run `/ready-to-archive`
+   > *"Ready to archive?"*  ·  *"Can I safely archive this?"*  ·  *"Is everything recorded?"*
 
 You get back a verdict — ✅ SAFE, ⚠️ NOT YET, or ❓ CAN'T FULLY VERIFY — with the evidence.
 
-## 🧭 What's inside
+## 🧭 How it works
 
-One skill: **`/ready-to-archive`**. It runs a grounded **three-pillar** audit:
+It runs a grounded **three-pillar** audit, verifying each against git and the filesystem —
+not the chat recollection:
 
 | Pillar | The question | Where it looks |
 | --- | --- | --- |
@@ -48,8 +49,8 @@ One skill: **`/ready-to-archive`**. It runs a grounded **three-pillar** audit:
 The verdict is **advisory**, and the skill acts only when you ask it to:
 
 - It **never** commits, pushes, merges, or opens a PR without your explicit go-ahead.
-- When there are gaps, it offers the **shortest path to GO** and hands off to the skill that
-  owns the work (`jig:slice-land` to merge, `jig:memory-sync` to save a learning).
+- When there are gaps, it offers the **shortest path to GO** — and, if you say yes, hands off
+  to whatever owns the work (e.g. merging the branch, saving a learning to memory).
 - A narrow *"yes, fix that one gap"* is never a blanket yes to commit-and-push everything.
 
 ## 🛡️ Why it defaults to caution
