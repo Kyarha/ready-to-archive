@@ -1,0 +1,9 @@
+{
+  "name": "ready-to-archive",
+  "description": "A last-gate safety check before you archive a session. Run /ready-to-archive (or ask 'can I archive this?') and it audits the session against three pillars — RECORDED (every decision, conclusion, and consequential change is written where the project keeps it, not living only in this chat), COMMITTED (the git working tree is clean and pushed if it must live remotely), and LANDED (branch work is merged to main where it had to be, or the open PR is named) — verifying each against the filesystem and git rather than the chat recollection. It defaults to caution: anything it cannot positively verify is reported as a gap, never waved through. Ends with one clear GO / NO-GO verdict and, when there are gaps, offers to close them — but never commits, pushes, merges, or records on your behalf without an explicit go-ahead. Built because a session once got archived with things unrecorded.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Marie-Rose Ramboz"
+  },
+  "keywords": ["skill", "session", "archive", "hygiene", "checklist", "git", "memory", "safety", "workflow", "recorded"]
+}
